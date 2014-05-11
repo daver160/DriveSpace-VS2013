@@ -16,5 +16,20 @@ namespace DriveSpace
         {
             InitializeComponent();
         }
+
+        private void btnDirectoryAdd_Click(object sender, EventArgs e)
+        {
+            if (popupDirectoryAdd.ShowDialog() == DialogResult.OK)
+            {
+                txtDrivePath.Text = popupDirectoryAdd.SelectedPath;
+                txtDriveLetter.Text = popupDirectoryAdd.SelectedPath;
+                listDirectories.Items.Add(popupDirectoryAdd.SelectedPath);
+            }
+        }
+
+        private void popupDirectoryAdd_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
     }
 }
